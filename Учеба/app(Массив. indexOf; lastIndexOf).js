@@ -1,4 +1,4 @@
-﻿//Массивы. indexOf() lastIndexOf()
+//Массивы. indexOf() lastIndexOf()
 
 const people = ["Tom", "Sam", "Bob", "Tom", "Alice", "Sam"];
 

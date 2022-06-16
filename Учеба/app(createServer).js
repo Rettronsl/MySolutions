@@ -2,9 +2,9 @@
 const http = require("http");
 http.createServer(function (request, response) {
 
-    response.end("Hello NodeJS!" + "Саша лох");
+    response.end("Hello");
 
-}).listen(3000, "127.0.0.1", function () {
+}).listen(3000, "192.168.83.125", function () {
 
     console.log("Сервер начал прослушивание на порту 3000");
 });
