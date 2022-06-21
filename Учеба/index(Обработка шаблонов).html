@@ -1,0 +1,31 @@
+<script>
+    //Обработка шаблонов с большим количеством вычисляемых фрагментов
+</script>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+
+<body>
+    <script>
+        const tom = { name: "Tom", age: 37 };
+        const bob = { name: "Bob", age: 11 };
+
+        function check(parts, name, age) {
+            if (age > 18) return `${parts[0]}${name}. Доступ открыт`;
+            else return `Для пользователя ${name} доступ закрыт. Возраст ${age} недействителен`;
+        }
+        let checkedTemplate1 = check`Пользователь: ${tom.name} ${tom.age}`;
+        let checkedTemplate2 = check`Пользователь ${bob.name} ${bob.age}`;
+
+        console.log(checkedTemplate1);
+        console.log(checkedTemplate2);
+
+    </script>
+</body>
+
+</html>

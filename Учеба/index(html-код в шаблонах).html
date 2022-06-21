@@ -1,0 +1,23 @@
+//шаблоны могут хранить html код, который будет динамически формироваться
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        const tom = { name: "Tom", age: 37 };
+        const markup = `<div>
+            <p><b>Name</b>: ${tom.name}</p> 
+            <b>Age</b>: ${tom.age}</p>
+            </div>`;
+
+        document.body.innerHTML = markup;
+    </script>
+</body>
+
+</html>

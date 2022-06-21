@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+
+<body>
+    <script>
+        const tom = "Tom";
+        const admin = "Admin";
+
+        function check(parts, name) {
+            if (name === "Admin") return "Пользователь не определен";
+            else return parts[0] + name + parts[1];
+        }
+
+        let checkedTemplate1 = check`Пользователь: ${tom}`; //ШАБЛОН просто указывается после названия функции!
+        let checkedTemplate2 = check`Пользователь: ${admin}`;
+
+        console.log(checkedTemplate1);
+        console.log(checkedTemplate2);
+    </script>
+</body>
+
+</html>

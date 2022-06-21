@@ -1,0 +1,27 @@
+//возможность передавать в функцию шаблон строки, не просто как строку, но и все ее динамически вычисляемые фрагменты в
+//виде отдельных параметров
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+
+<body>
+    <script>
+        const person = "Tom";
+
+        function check(parts, name) {   //parts - массив частей шаблона. name - динамически вычисляемый фрагмент шаблона
+            console.log(parts);
+            return parts[0] + name + parts[1];
+        }
+
+        let checkedTemplate = check`Person: ${person}.`;    //элементы массива "Person" и "." Значением является "Tom"
+        console.log(checkedTemplate);
+
+        document.body.innerHTML = checkedTemplate;
+    </script>
+</body>
+
+</html>
