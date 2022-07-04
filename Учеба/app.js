@@ -1,1 +1,3 @@
-﻿//Symbol
+﻿//Конструкция try..catch..finally
+
+
