@@ -1,4 +1,4 @@
-﻿//location. Расположение веб-страницы
+//location. Расположение веб-страницы
 
 //Свойства объекта location
 // href - полная строка запроса к ресурсу
@@ -28,7 +28,7 @@ document.write("Поиск: " + location.search + "<br />");
 location = "http://google.com";
 //аналогично
 //location.href = "http://google.com";
-//location.assign("httl://google.com");
+//location.assign("http://google.com");
 
 //Переход на другой локальный ресурс
 location.replace("index.html");
