@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <script>
+        var browser, uAgent = navigator.userAgent;
+
+        if (uAgent.indexOf("Chrome" && "Edg") !== -1) {
+            browser = "Microsoft Edge. Сочувствую";
+        } else if (uAgent.indexOf("Opera") !== -1) {
+            browser = "Opera";
+        } else if (uAgent.indexOf("Firefox") !== -1) {
+            browser = "Mozilla Firefox";
+        } else if (uAgent.indexOf("Trident") !== -1) {
+            browser = "Microsoft Internet Explorer";
+        } else if (uAgent.indexOf("YaBrowser") !== -1) {
+            browser = "Yandex browser. Сочувствую"
+        } else if (uAgent.indexOf("Chrome") !== -1) {
+            browser = "Google Chrome"
+        }
+        document.write("Твой браузер: " + browser);
+    </script>
+</body>
+
+</html>
