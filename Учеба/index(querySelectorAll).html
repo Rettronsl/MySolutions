@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--метод document.querySelectorAll возвращает массив найденных элементов-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div class="annotation">
+        <p>Аннотация статьи</p>
+    </div>
+    <div class="text">
+        <p>Первый абзац</p>
+        <p>Второй абзац</p>
+    </div>
+    <script>
+        var elems = document.querySelectorAll(".text p");
+        for (var i = 0; i < elems.length; ++i) {
+            document.write("Текст селектора " + i + ": " + elems[i].innerText + "<br/>");
+        }
+    </script>
+</body>
+
+</html>

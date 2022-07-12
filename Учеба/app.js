@@ -1,16 +1,7 @@
-﻿//Таймеры. requestAnimationFrame
+﻿//document. Поиск элементов
 
-//метод работает аналогично setInterval кроме того, что он заточен под работу с анимацией и графикой.
-/* В метод window.requestAnimationFrame() передается функция, которое будет вызываться 60 раз в секунду
-rotate изменяет угол поворота блока на странице.
-window.requestAnimationFrame() возвращает уникальный id, который может использоваться для остановки анимации 
-window.cancelAnimationFrame(id)*/
-
-var square = document.getElementById("rect");
-var angle = 0;
-function rotate() {
-    angle = (angle + 2) % 360;
-    square.style.transform = "rotate(" + angle + "deg)";
-    window.requestAnimationFrame(rotate);
-}
-var id = window.requestAnimationFrame(rotate);
+//getElementByld(value) - выбирает элемент у которого атрибут id равен value
+//getElementsByTagName(value) - выбирает все элементы, у которых тег равен value
+//getElementsByClassName(value) - выбирает все элементы, которые имеют класс value
+//querySelector(value) - выбирает первый элемент, который соответствует css-селектору value
+//querySelectorAll(value) - выбирает все элементы, которые соответствуют css-селектору value
