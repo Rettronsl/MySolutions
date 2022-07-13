@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--Для создания элементов используются следующие методы
+createElement(elementName) - создает и возвращает элемент html, тег которого передается в качестве параметра
+createTextNode(text) - создает и возвращает текстовый узел
+Для добавления элементов используются следующие методы
+appendChild(newNode) - добавляет новый узел newNode в конец коллекции дочерних узлов
+insertBefore(newNode, referenceNode) - добавляет новый узел newNode перед узлом referenceNode-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div class="article">
+        <h3>Заголовок статьи</h3>
+        <p>Первый абзац</p>
+        <p>Второй абзац</p>
+    </div>
+    <script>
+        //Добавление элементов на веб-страницу
+        var articleDiv = document.querySelector("div.article");
+        //создаем элемент
+        var elem = document.createElement("h2");
+        //создаем для него текст
+        var elemText = document.createTextNode("Привет мир!");
+        //добавляем текст в элемент в качестве дочернего элемента
+        elem.appendChild(elemText);
+        //добавляем элемент в блок div
+        articleDiv.appendChild(elem);
+    </script>
+    <script>
+        //вариант присвоения текста элементу
+        var elem = document.createElement("h2");
+        elem.textContent = "Привет мир!!";
+    </script>
+    <script>
+        //Добавление элемента в начало коллекции дочерних узлов
+        var articleDiv = document.querySelector("div.article"); //выбираем элементы по селектору
+        //создаем элемент
+        var elem = document.createElement("h2");
+        //Создаем для него текст
+        var elemText = document.createTextNode("Привет мир");
+        // Добавляем текст в элемент в качестве дочернего элемента
+        elem.appendChild(elemText);
+        // Получаем первый элемент, перед которым будет идти добавление
+        var firstElem = articleDiv.firstChild.nextSibling;
+        //добавляем элемент в блок div перед первым узлом
+        articleDiv.insertBefore(elem, firstElem);
+        /* Если надо вставить новый узел на второе, третье или любое другое место, то надо найти узел
+        перед которым надо вставлять с помощью комбинаций свойств firstChild/lastChild и nextSibling/previousSibling*/
+    </script>
+</body>
+
+</html>
