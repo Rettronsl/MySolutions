@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--свойство className. Изменение стиля-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .blueStyle {
+            color: blue;
+            font-family: Verdana;
+        }
+
+        .article {
+            color: brown;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="article">
+        <h3>Заголовок статьи</h3>
+        <p>Первый абзац</p>
+        <p>Второй абзац</p>
+    </div>
+    <script>
+        var articleDiv = document.querySelector("div.article");
+        // установка нового класса
+        articleDiv.className = "blueStyle";
+        // получаем название класса
+        document.write(articleDiv.className);
+        //articleDiv.classList.toggle("article");
+    </script>
+</body>
+
+</html>

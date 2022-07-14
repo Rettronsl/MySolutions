@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--объект Element это объект Node, у которых тип узла равен 1
+getAttribute(attr) - возвращает значение атрибута attr
+setAttribute(attr, value) - устанавливает для атрибута attr значение value. Если атрибута нет, то он добавляется
+removeAttributr(attr) - удаляет атрибут attr и его значение-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div class="article" style="color: red;">
+        <h3>Заголовок статьи</h3>
+        <p>Первый абзац</p>
+        <p>Второй абзац</p>
+    </div>
+    <script>
+        var articleDiv = document.querySelector("div.article");
+        //получаем атрибут style
+        var styleValue = articleDiv.getAttribute("style");
+        console.log("До изменения атрибута: " + styleValue);
+        //удаляем атрибут
+        articleDiv.removeAttribute("style");
+        //добавляем заново атрибут style
+        articleDiv.setAttribute("style", "color:blue");
+        styleValue = articleDiv.getAttribute("style");
+        console.log("После изменения атрибута: " + styleValue);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--html элемент можно создать пользуясь интерфейсом HTMLElement
+Можно создавать свои классы и их использовать. Для этого применяется функция
+customElements.define(name, constructor, options)
+name - имя кастомного элемента html. Имя должно содержать дефис
+constructor - конструктор, который представляет кастомный элемент html
+options - необязательный параметр, имеет параметр extends -->
+<html>
+
+<head>
+    <title>Создание своего элемента</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <!--создаем свой элемент-, он покажет приветствие-->
+    <hello-world></hello-world>
+
+    <script>
+        //создаем свой класс, наследующий свойства от HTMLElement
+        class helloWorld extends HTMLElement {
+            //объявляем конструктор
+            constructor() {
+                super();    //наследование функций родительского класса
+                let welcome = "Доброе утро";
+                const hour = new Date().getHours();
+                if (hour > 17) {
+                    welcome = "Добрый вечер";
+                } else if (hour > 12) {
+                    welcome = "Добрый день";
+                }
+                this.innerText = welcome;
+            }
+        }
+        customElements.define("hello-world", helloWorld)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--Определим метод, возвращаюший текущее время-->
+<html>
+
+<head>
+    <title>Часы с нажатием</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <!--Определяем собственный метод-->
+    <hello-time id="hello"></hello-time>
+
+    <script>
+        //Создаем собственный класс
+        class HelloTime extends HTMLElement {
+            constructor() {
+                super();
+
+                let welcome = "Доброе утро!";
+                const hour = new Date().getHours();
+                if (hour > 17) {
+                    welcome = "Добрый вечер";
+                }
+                else if (hour > 12) {
+                    welcome = "Добрый день";
+                }
+                this.style = "cursor:pointer;"
+                this.innerText = welcome;
+            }
+            showTime() {
+                console.log(new Date().toTimeString());
+            }
+        }
+        customElements.define("hello-time", HelloTime);
+
+        //получаем элемент
+        const hello = document.getElementById("hello");
+        // по нажатию вызываем его метод showTime
+        hello.addEventListener("click", () => hello.showTime());
+    </script>
+</body>
+
+</html>
