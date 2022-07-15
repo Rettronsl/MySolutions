@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--Кастомный элемент имеет свой жизненный цикл, который описывается методами:
+connectedCallback - вызывается каждый раз, когда кастомный элемент добавляется в DOM
+disconnectedCallback - вызывается каждый раз, когда кастомный элемент удаляется из DOM
+adoptedCallback - вызывается каждый раз, когда кастомный элемент перемещается в новый элемент
+attributeChangedCallback - вызывается при каждом изменении атрибута кастомного элемента-->
+<html>
+
+<head>
+    <title> События жизненного цикла</title>
+    <meta charset="utf-8" name="Author" content="Фокин Евгений Александрович">
+</head>
+
+<body>
+    <hello-skyfly id="hello"></hello-skyfly>
+    <script>
+        class HelloSkyFly extends HTMLElement {
+            constructor() {
+                super();
+
+                let welcome = "Доброе утро!";
+                const hour = new Date().getHours();
+                if (hour > 12) {
+                    welcome = "Добрый день";
+                } else if (hour > 17) {
+                    welcome = "Добрый вечер";
+                }
+                this.style.cursor = "pointer"
+                this.innerText = welcome;
+            }
+            //применяется метод connectedCallback - меняем цвет шрифта
+            connectedCallback() {
+                this.style.color = "red";
+            }
+            // Показываем время в консоли
+            showTime() {
+                console.log(new Date().toTimeString());
+            }
+        }
+
+        customElements.define("hello-skyfly", HelloSkyFly);
+    </script>
+</body>
+
+</html>

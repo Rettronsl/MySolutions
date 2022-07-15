@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--Можно для кастомного элемента определить свои атрибуты-->
+<html>
+
+<head>
+    <meta charset="utf-8" name="Author" content="Фокин Евгений Александрович">
+    <title>Добавление атрибутов</title>
+</head>
+
+<body>
+    <hello-skyfly hellocolor="#2980b9"></hello-skyfly>
+    <br />
+    <hello-skyfly></hello-skyfly>
+
+    <script>
+        class HelloSkyFly extends HTMLElement {
+            constructor() {
+                super();
+
+                let welcome = "Доброе утро";
+                const hour = new Date().getHours();
+                if (hour > 12) {
+                    welcome = "Добрый день";
+                } else if (hour > 17) {
+                    welcome = "Добрый вечер";
+                }
+                this.style.cursor = "pointer"
+                this.innerText = welcome;
+            }
+            //метод вызывается каждый раз, как добавлен элемент
+            connectedCallback() {
+                // устанавливаем цвет по умолчанию - красный
+                this.style.color = "red";
+                // если есть кастомный элемент с атрибутом hellocolor, то цвет меняем
+                if (this.hasAttribute("hellocolor")) {
+                    this.style.color = this.getAttribute("hellocolor");
+                }
+            }
+            showTime() {
+                console.log(new Date().toTimeString());
+            }
+        }
+
+        customElements.define("hello-skyfly", HelloSkyFly);
+    </script>
+</body>
+
+</html>

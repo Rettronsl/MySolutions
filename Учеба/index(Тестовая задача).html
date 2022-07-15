@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Тестовая задача</title>
+</head>
+
+<body>
+    <button onclick="displayMessage()">Нажми сюда</button>
+    <div class="article"> </div>
+
+    <script>
+        function displayMessage() {
+            // находим элементы по селектору
+            var articleDiv = document.querySelector("div.article");
+            // создаем новый элемент
+            var elem = document.createElement("h3");
+            // создаем переменную, которой присваиваем текущее время в виде строки
+            var time = new Date().toTimeString().split(" ", 1);
+            // создаем текстовый элемент, в который пишем ранее определенную переменную
+            var elemText = document.createTextNode(time);
+            // добавляем текст в элемент в качестве дочернего элемента
+            elem.appendChild(elemText);
+            // добавляем элемент в блок div
+            articleDiv.appendChild(elem);
+        }
+    </script>
+</body>
+
+</html>
