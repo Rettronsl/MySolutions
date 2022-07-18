@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--В обработчик можно передавать параметры, например текущий объект на котором возникает событие-->
+<html>
+
+<head>
+    <title>Передача параметров в обработчик события</title>
+    <meta charset="utf-8" name="Author" content="Фокин Евгений Александрович">
+</head>
+
+<body>
+    <a href="page1.html" onclick="return handler(this)">Страница 1</a>
+    <script>
+        function handler(obj) {
+            alert(obj.href)
+        }
+    </script>
+</body>
+
+</html>
