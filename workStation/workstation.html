@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="Author" content="Фокин Е. А.; Виткалов В.О.">
+    <title>Рабочие станции ООО "Промобит"</title>
+</head>
+
+<body>
+    <!--Тип рабочей станции-->
+    <div>
+        <form>
+            <h2>Выберите тип рабочей станции</h2>
+            <p><input type="radio" value="big" name="station" />Большая</p>
+            <p><input type="radio" value="small" name="station" />Маленькая</p>
+            <p><input type="radio" value="special" name="station" />Терминал</p>
+        </form>
+    </div>
+    <!--Цвет-->
+    <div>
+        <form>
+            <p>
+                <label for="color">Выберите цвет</label>
+                <input type="color" list="colors" id="color">
+                <datalist id="colors">
+                    <option value="#000000">Черный</option>
+                    <option value="#008000">Зеленый</option>
+                </datalist>
+            </p>
+        </form>
+    </div>
+    <!--Зашитное исполнение-->
+    <div>
+        <form>
+            <h2>Нужно защищенное исполнение?</h2>
+            <p>
+                <input type="radio" value="safe" />Да
+            </p>
+            <p>
+                <input type="radio" value="noSafe" />Нет
+            </p>
+        </form>
+    </div>
+
+    <!--Процессор-->
+    <div>
+        <form>
+            <p>
+                <label for="processor">Выберите процессор:</label>
+                <select id="processor">
+                    <option value="Эльбрус-8СВ">Эльбрус-8СВ</option>
+                    <option value="Intel 1">Intel №1</option>
+                    <option value="Intel 2">Intel №2</option>
+                    <option value="AMD">AMD</option>
+                </select>
+            </p>
+        </form>
+    </div>
+
+    <!--Материнская плата-->
+    <div>
+        <form>
+            <p>
+                <label for="motherboard">Выберите материнскую плату:</label>
+                <select id="motherboard">
+                    <option value="ЛЯЮИ...">ЛЯЮИ...</option>
+                    <option value="МП1">МП №1</option>
+                    <option value="МП2">МП №2</option>
+                    <option value="МП3">МП №3</option>
+                </select>
+            </p>
+        </form>
+    </div>
+    <!--Видеокарта-->
+    <div>
+        <form>
+            <p>
+                <label for="videocard">Выберите видеокарту:</label>
+                <select id="videocard">
+                    <option value="ВК1">Nvidia №1</option>
+                    <option value="ВК2">Nvidia №2</option>
+                    <option value="ВК3">Radeon №1</option>
+                    <option value="ВК4">Radeon №2</option>
+                </select>
+            </p>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

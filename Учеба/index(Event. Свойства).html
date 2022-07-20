@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--Информацию о событии содержит объект Event. Он имеет следующие свойства:
+bubbles - возвращает true, если событие является восходящим. Событие, возникшее на вложенном элементе
+может быть обработано на родительском элементе.
+cancelable - возвращает true, если можно отменить стандартную обработку события
+currentTarget - определяет элемент, к которому прикреплен обработчик события
+defaultPrevented - возвращает true если был вызван у объекта Event метод preventDefault
+eventPhase - определяет стадию обработки события
+target - указывает на элемент, на котором было вызвано событие
+timeStamp - хранит время возникновения события
+type - указывает на имя события-->
+<html>
+
+<head>
+    <title> Event. Свойства</title>
+    <meta charset="utf-8" name="Author" content="Фокин Евгений Александрович">
+    <style>
+        #rect {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect"></div>
+    <script>
+        function handler(event) {
+            console.log("Тип события: " + event.type);
+            console.log(event.target);
+            //target представляет собой элемент, можно манипулировать им как узлами и элементами DOM
+            event.target.style.backgroundColor = "red";
+        }
+        var rect = document.getElementById("rect");
+        rect.addEventListener("click", handler);
+    </script>
+</body>
+
+</html>

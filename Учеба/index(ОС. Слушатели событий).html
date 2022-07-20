@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--Объект EventTarget имеет методы
+addEventListener() - добавление слушателя
+removeEventListener() - для удаления слушателя-->
+<html>
+
+<head>
+    <title>Слушатели событий</title>
+    <meta charset="utf-8" name="Author" content="Фокин Евгений Александрович">
+
+</head>
+
+<body>
+    <style>
+        #rect {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+    <div id="rect">Приветфлупзшгпзгшфупзшгуопшзгуп</div>
+    <script>
+        var clicks = 0;
+        //функция первого обработчика
+        function handlerOne(e) {
+            alert(e.type);
+        }
+        // функция второго обработчика
+        function handlerTwo(e) {
+            clicks++;
+            var newNode = document.createElement("p");  //создаем новый элемент
+            newNode.textContent = "произошло нажатие " + clicks;    //добавляем ему текст
+            document.body.appendChild(newNode); //добавляем элемент в документ
+        }
+        // выбираем элемент по id
+        var rect = document.getElementById("rect");
+        // прикрепляем первый обработчик (слушатель событий)
+        rect.addEventListener("click", handlerOne);
+        // прикрепляем второй обработчик (слушатель событий)
+        rect.addEventListener("click", handlerTwo);
+
+    </script>
+</body>
+
+</html>

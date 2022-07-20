@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--preventDefault - может остановить дальнейшее выполнение события-->
+<html>
+
+<head>
+    <title>Event. Остановка выполнения события</title>
+    <meta charset="utf-8" name="Author" content="Фокин Евгений Александрович">
+</head>
+
+<body>
+    <a href="http://bitblaze.ru" id="link">Какой то сайт</a>
+    <script>
+        function linkHandler(Event) {
+            var date = new Date();
+            var hour = date.getHours();
+            console.log(hour);
+            if (hour > 12) {
+                Event.preventDefault();
+                document.write("После 12  переход запрещен");
+            }
+        }
+        var link = document.getElementById("link");
+        link.addEventListener("click", linkHandler);
+    </script>
+</body>
+
+</html>
